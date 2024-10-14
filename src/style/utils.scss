@@ -1,0 +1,14 @@
+/*
+  Mixin for more elegant writing of media queries.
+  Usage:
+  @include media-query("desktop") {
+    // ... CSS code here
+  }
+ */
+@mixin media-query($query-name) {
+  @if $query-name == desktop {
+    @media (min-width: $breakpoint-mobile) { @content; }
+  } @else {
+    @error "Unknown media query '#{$query-name}'";
+  }
+}

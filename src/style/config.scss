@@ -1,0 +1,14 @@
+/*
+ * Configuration & variables
+ * Shared configuration that is used by everything for consistency
+ */
+
+// Breakpoint
+// This application only has one: Mobile vs. Desktop
+$breakpoint-mobile: 768px;
+
+// Common margin variable to keep margins consistent
+$m: 10px;
+
+// Common border radius to keep corner radius' consistent
+$radius: 5px;

@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dress That Jeff!</title>
+
+  <link rel="stylesheet" href="style/index.scss">
+</head>
+
+<body>
+  <div class="app">
+    <!-- Jeff -->
+    <div class="jeff">
+      <img src="/assets/background.png" class="jeff__background">
+      <img src="/assets/items/shoes_06.png" class="jeff__shoes">
+      <img src="/assets/items/pants_06.png" class="jeff__pants">
+      <img src="/assets/items/top_06.png" class="jeff__top">
+      <img src="/assets/items/accessory_02.png" class="jeff__accessory">
+    </div>
+
+
+    <!-- Controls -->
+    <div class="controls">
+      <!-- Accessory -->
+      <div class="control is-open" data-control-type="accessory">
+        <div class="control__header">Accessory</div>
+        <div class="control__body">
+          <!-- Options -->
+          <div class="control__options">
+            <div class="option">
+              <label class="option__label">
+                Hue
+                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('accessory', event)" value="0">
+              </label>
+            </div>
+          </div>
+
+          <!-- Items -->
+          <div class="item-list">
+            <!-- @NOTE Populated by JavaScript. -->
+          </div>
+
+        </div>
+      </div><!-- control -->
+
+
+      <!-- Top -->
+      <div class="control" data-control-type="top">
+        <div class="control__header">Top</div>
+        <div class="control__body">
+          <!-- Options -->
+          <div class="control__options">
+            <div class="option">
+              <label class="option__label">
+                Hue
+                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('top', event)" value="0">
+              </label>
+            </div>
+          </div>
+
+          <!-- Items -->
+          <div class="item-list">
+            <!-- @NOTE Populated by JavaScript. -->
+          </div>
+
+        </div>
+      </div><!-- control -->
+
+
+      <!-- Pants -->
+      <div class="control" data-control-type="pants">
+        <div class="control__header">Pants</div>
+        <div class="control__body">
+          <!-- Options -->
+          <div class="control__options">
+            <div class="option">
+              <label class="option__label">
+                Hue
+                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('pants', event)" value="0">
+              </label>
+            </div>
+          </div>
+
+          <!-- Items -->
+          <div class="item-list">
+            <!-- @NOTE Populated by JavaScript. -->
+          </div>
+
+        </div>
+      </div><!-- control -->
+
+
+      <!-- Shoes -->
+      <div class="control" data-control-type="shoes">
+        <div class="control__header">Shoes</div>
+        <div class="control__body">
+          <!-- Options -->
+          <div class="control__options">
+            <div class="option">
+              <label class="option__label">
+                Hue
+                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('shoes', event)" value="0">
+              </label>
+            </div>
+          </div>
+
+          <!-- Items -->
+          <div class="item-list">
+            <!-- @NOTE Populated by JavaScript. -->
+          </div>
+
+        </div>
+      </div><!-- control -->
+
+
+    </div><!-- controls -->
+  </div><!-- app -->
+
+  <script type="module" src="scripts/index.js"></script>
+</body>
+
+</html>

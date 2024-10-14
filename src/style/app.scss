@@ -1,0 +1,32 @@
+/*
+  Site-wide styles / branding not specific to anything in particular
+ */
+
+html {
+  box-sizing: border-box;
+  // Better Font Rendering
+  font-feature-settings: "kern" 1;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-variant-ligatures: no-common-ligatures;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+/*
+ * App component
+ * Wraps the entire application
+ */
+@include media-query("desktop") {
+  .app {
+    display: flex;
+    flex-direction: row;
+  }
+}

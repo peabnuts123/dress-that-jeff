@@ -1,0 +1,61 @@
+/*
+ * Controls list
+ * A list of controls
+ */
+.controls {
+  @include media-query("desktop") {
+    width: 50%;
+  }
+}
+
+/*
+ * Control
+ * One of many controls in a controls list (e.g. "Pants")
+ * Contains a list of Options (e.g. hue-slider) and an Item List
+ */
+.control { }
+.control.is-open {
+
+}
+.control__header {}
+.control__body {}
+.control__options {}
+
+/*
+ * Option
+ * Something configurable within a control (e.g. a hue slider)
+ */
+.option {}
+.option__label {}
+.option__control {}
+
+/*
+ * Item List
+ * A list of items, displayed within a control
+ */
+ .item-list {
+  display: flex;
+  flex-wrap: wrap;
+ }
+
+/*
+ * Item
+ * A clothing item, displayed as a grid within an item list
+ */
+.item {
+  width: 150px;
+  height: 150px;
+  background-color: gray;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: $m;
+  margin-bottom: $m;
+  padding: $m;
+  border-radius: $radius;
+}
+.item__image {
+  max-width: 100%;
+  max-height: 100%;
+}

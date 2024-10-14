@@ -1,0 +1,49 @@
+/*
+ * The Jeff component
+ * Previews the currently selected fit
+ */
+
+.jeff {
+  position: relative;
+
+  @include media-query("desktop") {
+    width: 50%;
+  }
+}
+
+// Common styles used by each "layer" of the Jeff
+%image-layer {
+  position: absolute;
+  max-width: min(500px, 100%);
+  top: 0;
+  left: 0;
+}
+
+.jeff__background {
+  @extend %image-layer;
+  position: static; // Make background non-absolute so it takes up space in the layout
+}
+
+
+// Use z-index to ensure the layers are drawn in the correct order:
+// https://developer.mozilla.org/en-US/docs/Web/CSS/z-index
+
+.jeff__accessory {
+  @extend %image-layer;
+  z-index: 5;
+}
+
+.jeff__top {
+  @extend %image-layer;
+  z-index: 4;
+}
+
+.jeff__pants {
+  @extend %image-layer;
+  z-index: 3;
+}
+
+.jeff__shoes {
+  @extend %image-layer;
+  z-index: 2;
+}
