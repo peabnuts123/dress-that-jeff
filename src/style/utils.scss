@@ -12,3 +12,9 @@
     @error "Unknown media query '#{$query-name}'";
   }
 }
+
+
+@mixin desktop-only() {
+  @media (min-width: $breakpoint-mobile) { @content; }
+  
+}

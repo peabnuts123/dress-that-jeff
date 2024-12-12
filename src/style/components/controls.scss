@@ -3,7 +3,7 @@
  * A list of controls
  */
 .controls {
-  @include media-query("desktop") {
+  @include desktop-only() {
     width: 50%;
   }
 }
@@ -13,21 +13,63 @@
  * One of many controls in a controls list (e.g. "Pants")
  * Contains a list of Options (e.g. hue-slider) and an Item List
  */
-.control { }
-.control.is-open {
 
+ span {
+  margin-right: $m;
+ }
+.controls { 
+  margin: $m;
+  padding: $p;
+  padding-top: $p * 2;
 }
-.control__header {}
-.control__body {}
+
+.control {
+  
+}
+
+.control__header {
+  background-color: #4d4a5d;
+  height: 50px;
+  font-size: 2rem;
+  padding: 5px;
+}
+
+.control__header:hover {
+  background-color: #d7d4e8;
+}
+.control__body {
+  padding: $m * 2;
+  display: none;
+  overflow: hidden;
+  
+}
 .control__options {}
+
+
+.control__body.is-open {
+  
+ display: block;
+  
+  
+  }
 
 /*
  * Option
  * Something configurable within a control (e.g. a hue slider)
  */
-.option {}
-.option__label {}
-.option__control {}
+.option {
+  width: 100%;
+  font-size: 2rem;
+  
+}
+.option__label {
+  display: flex;
+  flex-direction: row;
+}
+.option__control {
+  flex-grow: 1;
+  
+}
 
 /*
  * Item List
@@ -36,6 +78,7 @@
  .item-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
  }
 
 /*
@@ -43,8 +86,8 @@
  * A clothing item, displayed as a grid within an item list
  */
 .item {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
   background-color: gray;
   border: 1px solid black;
   display: flex;
@@ -54,6 +97,17 @@
   margin-bottom: $m;
   padding: $m;
   border-radius: $radius;
+  font-size: 2rem;
+  @include media-query("desktop") {
+    width: 150px;
+    height: 150px;
+  }
+}
+.item:hover {
+  background-color: #d7d4e8;
+}
+.item:focus {
+  background-color: #d7d4e8;
 }
 .item__image {
   max-width: 100%;

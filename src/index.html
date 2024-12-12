@@ -8,33 +8,43 @@
   <title>Dress That Jeff!</title>
 
   <link rel="stylesheet" href="style/index.scss">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <h1 class="title">DRESS 👏 THAT 👏 JEFF </h1>
   <div class="app">
+    <!-- heading -->
+     
     <!-- Jeff -->
+     <div class="jeff__container">
     <div class="jeff">
       <img src="/assets/background.png" class="jeff__background">
-      <img src="/assets/items/shoes_06.png" class="jeff__shoes">
-      <img src="/assets/items/pants_06.png" class="jeff__pants">
-      <img src="/assets/items/top_06.png" class="jeff__top">
-      <img src="/assets/items/accessory_02.png" class="jeff__accessory">
+      <img src="/assets/items/shoes_06.png" class="jeff__item jeff__shoes">
+      <img src="/assets/items/pants_06.png" class="jeff__item jeff__pants">
+      <img src="/assets/items/top_06.png" class="jeff__item jeff__top">
+      <img src="/assets/items/accessory_02.png" class="jeff__item jeff__accessory">
     </div>
+    <div class="clear">REMOVE FIT 🚫</div>
+  </div>
 
 
     <!-- Controls -->
     <div class="controls">
       <!-- Accessory -->
       <div class="control is-open" data-control-type="accessory">
-        <div class="control__header">Accessory</div>
-        <div class="control__body">
+        <div class="control__header">Accessories</div>
+        <div class="control__body is-open">
           <!-- Options -->
           <div class="control__options">
             <div class="option">
               <label class="option__label">
-                Hue
+                <span>Hue</span>
                 <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('accessory', event)" value="0">
               </label>
+              
             </div>
           </div>
 
@@ -55,8 +65,8 @@
           <div class="control__options">
             <div class="option">
               <label class="option__label">
-                Hue
-                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('top', event)" value="0">
+                <span>Hue</span>
+                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('accessory', event)" value="0">
               </label>
             </div>
           </div>
@@ -78,8 +88,8 @@
           <div class="control__options">
             <div class="option">
               <label class="option__label">
-                Hue
-                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('pants', event)" value="0">
+                <span>Hue</span>
+                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('accessory', event)" value="0">
               </label>
             </div>
           </div>
@@ -101,8 +111,8 @@
           <div class="control__options">
             <div class="option">
               <label class="option__label">
-                Hue
-                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('shoes', event)" value="0">
+                <span>Hue</span>
+                <input type="range" name="Hue slider" class="option__control" oninput="onHueSliderChange('accessory', event)" value="0">
               </label>
             </div>
           </div>

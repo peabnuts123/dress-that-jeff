@@ -3,18 +3,40 @@
  * Previews the currently selected fit
  */
 
-.jeff {
-  position: relative;
-
-  @include media-query("desktop") {
+ .jeff__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: $m * 2;
+  max-height: 100vh;
+  @include desktop-only() {
     width: 50%;
   }
+
+ }
+
+ .clear {
+  background-color: #8e3232;
+  padding: $p;
+  font-size: 2rem;
+  text-align: center;
+  border: 2px solid #760909;
+  border-radius: 10px;
+  width: 100%;
+ }
+
+ .clear:hover {
+  background-color: #ec6f6f;
+ }
+
+.jeff {
+  position: relative;
 }
 
 // Common styles used by each "layer" of the Jeff
 %image-layer {
   position: absolute;
-  max-width: min(500px, 100%);
+  max-width: 100%;
   top: 0;
   left: 0;
 }

@@ -1,4 +1,5 @@
 import { Jeff } from '../selectors';
+import { ItemLists } from '../selectors';
 
 /**
  * @param {string} type Which part of the outfit is being changed (e.g. "accessory", "shoes")
@@ -19,18 +20,23 @@ function onHueSliderChange(type, e) {
   // @TODO add CSS filter to all the items in the list too
   // Look at ItemLists.whatever.querySelectorAll('.item')
 
+
   switch (type) {
     case 'accessory':
       Jeff.accessory.style['filter'] = cssFilterValue;
+      ItemLists.accessory.style['filter'] = cssFilterValue;
       break;
     case 'top':
       Jeff.top.style['filter'] = cssFilterValue;
+      ItemLists.top.style['filter'] = cssFilterValue;cssFilterValue;
       break;
     case 'pants':
       Jeff.pants.style['filter'] = cssFilterValue;
+      ItemLists.pants.style['filter'] = cssFilterValue;
       break;
     case 'shoes':
       Jeff.shoes.style['filter'] = cssFilterValue;
+      ItemLists.shoes.style['filter'] = cssFilterValue;
       break;
     default:
       // Some case we haven't handled yet (presumably because we added something new and forgot to update this)

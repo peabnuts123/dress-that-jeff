@@ -19,7 +19,7 @@ function createItemList(type, data, itemList) {
     .map((item, index) => getItemHtml(item, type, index))
     .join('');
 
-  itemList.innerHTML = listHtml;
+  itemList.innerHTML = listHtml + getEmptyButton(type)
 }
 
 /**
@@ -30,11 +30,24 @@ function createItemList(type, data, itemList) {
  */
 function getItemHtml(itemData, type, index) {
   return `
-    <div class="item" onclick="onClickItem('${type}', ${index})">
+    <button class="item" tabindex="0" onclick="onClickItem('${type}', ${index})">
       <img src="${itemData.iconUrl}" class="item__image">
-    </div>
+    </button>
   `;
 }
+
+// make empty button - no image (clear)
+
+function getEmptyButton(type,index) {
+  return `
+    <button class="item" tabindex="0" onclick="onClickItemClear('${type}', ${index})">
+    Clear item ❌
+    
+    </button>
+    `;
+}
+
+
 
 /**
  * Callback for when an item is clicked.
@@ -71,5 +84,53 @@ function onClickItem(type, index) {
   }
 }
 
+// clear function - individual items
+
+function onClickItemClear(type) {
+  let dataItem;
+  switch (type) {
+    case 'accessory':
+      Jeff.accessory.src = '';
+      break;
+    case 'top':
+      Jeff.top.src = '';
+      break;
+    case 'pants':
+      Jeff.pants.src = '';
+      break;
+    case 'shoes':
+      Jeff.shoes.src = '';
+      break;
+  }
+}
+
+// clear function - entire fit
+
+document.querySelector('.clear').addEventListener('click',clearFit)
+
+function clearFit() {
+   const jeffItems = Array.from(document.querySelectorAll('.jeff__item'))
+   console.log(jeffItems) // array of jeff items
+   jeffItems.forEach(item => item.src = '')
+}
+
+//functionality for accordion
+
+const accordianHeaders = document.querySelectorAll('.control__header')
+const accordianBody = document.querySelectorAll('.control__body')
+
+accordianHeaders.forEach(header => {
+  header.addEventListener('click', () => {
+    const accordianItem = header.parentElement
+    const accordianContent = accordianItem.querySelector(".control__body")
+
+    accordianContent.classList.toggle('is-open')
+
+    
+
+  })
+})
+
 // Expose globally so these functions can be referenced from the HTML
 window.onClickItem = onClickItem;
+window.onClickItemClear = onClickItemClear;
