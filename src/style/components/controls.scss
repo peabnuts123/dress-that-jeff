@@ -14,17 +14,11 @@
  * Contains a list of Options (e.g. hue-slider) and an Item List
  */
 
- span {
-  margin-right: $m;
- }
+ 
 .controls { 
   margin: $m;
   padding: $p;
   padding-top: $p * 2;
-}
-
-.control {
-  
 }
 
 .control__header {
@@ -65,6 +59,9 @@
 .option__label {
   display: flex;
   flex-direction: row;
+  >span {
+    margin-right: $m;
+  }
 }
 .option__control {
   flex-grow: 1;
@@ -91,6 +88,7 @@
   background-color: gray;
   border: 1px solid black;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-right: $m;
@@ -99,8 +97,9 @@
   border-radius: $radius;
   font-size: 2rem;
   @include media-query("desktop") {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
+    font-size: 1.5rem;
   }
 }
 .item:hover {
@@ -112,4 +111,7 @@
 .item__image {
   max-width: 100%;
   max-height: 100%;
+}
+.item__clear-icon {
+  font-size: 1.25rem;
 }

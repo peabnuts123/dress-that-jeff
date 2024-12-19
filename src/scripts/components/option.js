@@ -28,7 +28,7 @@ function onHueSliderChange(type, e) {
       break;
     case 'top':
       Jeff.top.style['filter'] = cssFilterValue;
-      ItemLists.top.style['filter'] = cssFilterValue;cssFilterValue;
+      ItemLists.top.style['filter'] = cssFilterValue;
       break;
     case 'pants':
       Jeff.pants.style['filter'] = cssFilterValue;

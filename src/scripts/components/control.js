@@ -41,7 +41,7 @@ function getItemHtml(itemData, type, index) {
 function getEmptyButton(type,index) {
   return `
     <button class="item" tabindex="0" onclick="onClickItemClear('${type}', ${index})">
-    Clear item ❌
+    Clear item <span class="item__clear-icon">❌</span>
     
     </button>
     `;
